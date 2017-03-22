@@ -72,7 +72,7 @@ $(PYTHON_PACKAGE)_wrap.so: $(srcdir)/$(PYTHON_PACKAGE)_wrap.c
 
 $(PYTHON_FULL_DYLIB): $(PYTHON_PACKAGE)-stamp
 $(PYTHON_PACKAGE)-stamp: $(PYTHON_PACKAGE)_wrap.so
-	$(CC) $(AM_CFLAGS) $(CFLAGS) $(PYTHON_PACKAGE)_wrap.so $(PYTHON_LDFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $(PYTHON_FULL_DYLIB)
+	$(CC) $(AM_CFLAGS) $(CFLAGS) $(PYTHON_PACKAGE)_wrap.so $(PYTHON_LDFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -shared -o $(PYTHON_FULL_DYLIB)
 	touch $(PYTHON_PACKAGE)-stamp
 
 install-pythonDATA: $(python_DATA)
